@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>dipake.jpg</file>
+  </qresource>
+</RCC>
