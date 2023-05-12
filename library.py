@@ -3,8 +3,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 def connection():
-    con = pymysql.connect(db='naive-bayes', user='root',
-                          passwd='123456', host='localhost', port=3306, autocommit=True)
+    con = pymysql.connect(db='naive_bayes', user='root',
+                          passwd='', host='localhost', port=3306, autocommit=True)
     cur = con.cursor()
     return cur, con
 

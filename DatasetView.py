@@ -46,10 +46,10 @@ class Ui_DatasetWindow(object):
     def show_data(self):
         try:
             cur, con = connection()
-            cur.execute("SELECT komentar, suka, waktu, userlink, user FROM komentar  WHERE status = 0")
+            cur.execute("SELECT komentar, suka, waktu, user FROM komentar  WHERE status = 0")
             result = cur.fetchall()
             self.tbDatasetUji.setRowCount(0)
-            self.tbDatasetUji.setHorizontalHeaderLabels(['komentar', 'suka', 'waktu', 'userlink', 'user'])
+            self.tbDatasetUji.setHorizontalHeaderLabels(['komentar', 'suka', 'waktu', 'user'])
 
             for row_number, row_data in enumerate(result):
                 self.tbDatasetUji.insertRow(row_number)
@@ -210,10 +210,10 @@ class Ui_DatasetWindow(object):
                 messagebox("SUKSES", "Data Preprocessing Tersimpan")
 
                 cur, con = connection()
-                cur.execute("SELECT komentar, suka, waktu, userlink, user FROM komentar  WHERE status = 0")
+                cur.execute("SELECT komentar, suka, waktu,  user FROM komentar  WHERE status = 0")
                 result = cur.fetchall()
                 self.tbDatasetUji.setRowCount(0)
-                self.tbDatasetUji.setHorizontalHeaderLabels(['komentar', 'suka', 'waktu', 'userlink', 'user'])
+                self.tbDatasetUji.setHorizontalHeaderLabels(['komentar', 'suka', 'waktu', 'user'])
 
                 for row_number, row_data in enumerate(result):
                     self.tbDatasetUji.insertRow(row_number)
@@ -261,7 +261,7 @@ class Ui_DatasetWindow(object):
         font.setPointSize(10)
         self.tbDatasetUji.setFont(font)
         self.tbDatasetUji.setObjectName("tbDatasetUji")
-        self.tbDatasetUji.setColumnCount(5)
+        self.tbDatasetUji.setColumnCount(4)
         self.tbDatasetUji.setRowCount(0)
         self.show_data()
         self.btnImport = QtWidgets.QPushButton(self.centralwidget)

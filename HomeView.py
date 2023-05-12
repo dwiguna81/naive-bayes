@@ -150,7 +150,7 @@ class Ui_HomeWindow(object):
             for i in links:
                 youtube.open(i)
 
-                for j in range(0, 5):
+                for j in range(0, 1):
                     response = youtube.video_comments()
                     data = response['body']
 
@@ -158,10 +158,9 @@ class Ui_HomeWindow(object):
                     comment = k["Comment"]
                     suka = k["Likes"]
                     waktu = k["Time"]
-                    userlink = k["UserLink"]
                     user = k["user"]
-                    sql = "INSERT INTO komentar (komentar, suka, waktu, userlink, user) Values (%s, %s, %s, %s, %s)"
-                    insertToDB = cur.execute(sql, (comment, suka, waktu, userlink, user))
+                    sql = "INSERT INTO komentar (komentar, suka, waktu, user) Values (%s, %s, %s, %s)"
+                    insertToDB = cur.execute(sql, (comment, suka, waktu, user))
 
             sql = "UPDATE link SET status=%s WHERE status=%s"
             cur.execute(sql, (1, 0))
